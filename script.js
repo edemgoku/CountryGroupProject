@@ -30,3 +30,33 @@ const countries = [
     { name: "Bonaire, Sint Eustatius and Sabare", flag: "https://flagcdn.com/w320/bq.png" },
     
 ];
+
+// Function to generate country cards dynamically
+function generateCountryCards() {
+    const container = document.getElementById("countriesContainer");
+
+    countries.forEach(country => {
+        // Create the card
+        const card = document.createElement("div");
+        card.classList.add("country-card");
+
+        // Create the flag image
+        const img = document.createElement("img");
+        img.src = country.flag;
+        img.alt = country.name;
+
+        // Create the country name text
+        const name = document.createElement("p");
+        name.textContent = country.name.toUpperCase();
+
+        // Add elements to the card
+        card.AddChild(img);
+        card.AddChild(name);
+
+        // Add card to container
+        container.AddChild(card);
+    });
+}
+
+// Call the function to generate the content
+generateCountryCards();
