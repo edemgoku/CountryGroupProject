@@ -58,5 +58,12 @@ function generateCountryCards() {
     });
 }
 
+// Function to search for countries 
+function searchCountries() {
+    const searchInput = document.getElementById("searchInput").value;
+    generateCountryCards(searchInput);
+}
+
+
 // Call the function to generate the content
 generateCountryCards();
