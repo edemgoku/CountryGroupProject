@@ -32,10 +32,13 @@ const countries = [
 ];
 
 // Function to generate country cards dynamically
-function generateCountryCards() {
+function generateCountryCards(searchInput) {
     const container = document.getElementById("countriesContainer");
+    container.innerHTML = ""; // Clear previous content
+    let filteredCountries = countries
+    .filter(country => country.name.toLowerCase().includes(searchInput.toLowerCase()))
 
-    countries.forEach(country => {
+    filteredCountries.forEach(country => {
         // Create the card
         const card = document.createElement("div");
         card.classList.add("country-card");
@@ -50,11 +53,11 @@ function generateCountryCards() {
         name.textContent = country.name.toUpperCase();
 
         // Add elements to the card
-        card.AddChild(img);
-        card.AddChild(name);
+        card.appendChild(img);
+        card.appendChild(name);
 
         // Add card to container
-        container.AddChild(card);
+        container.appendChild(card);
     });
 }
 
@@ -66,4 +69,4 @@ function searchCountries() {
 
 
 // Call the function to generate the content
-generateCountryCards();
+generateCountryCards("");

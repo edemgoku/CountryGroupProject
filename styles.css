@@ -47,4 +47,8 @@ body {
 
 .search-container {
     margin: 20px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    
 }
